@@ -1,23 +1,17 @@
-import { StatusBar, StyleSheet, useColorScheme } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+// App.tsx
+import { NavigationContainer } from '@react-navigation/native';
+import Stack from './components/navigation/RootStack';
 
-import Home from './screens/Home';
-import NewApp from './screens/NewApp';
+import HomeScreen from './screens/Home';
+import NewAppScreen from './screens/NewApp';
 
 export default function App() {
-  const isDarkMode = useColorScheme() === 'dark';
   return (
-    <>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <SafeAreaView style={styles.container}>
-        <NewApp />
-      </SafeAreaView>
-    </>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="NewApp" component={NewAppScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
