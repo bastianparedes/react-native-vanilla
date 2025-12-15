@@ -6,6 +6,4 @@ export type RootStackParamList = {
   Profile: { userId: number };
 };
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
-
-export default Stack;
+export const Stack = createNativeStackNavigator<RootStackParamList>();
