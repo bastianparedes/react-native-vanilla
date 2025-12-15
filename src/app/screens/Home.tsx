@@ -5,12 +5,12 @@ import { RootStackParamList } from '../components/navigation/Stack';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
-export default function Home({ navigation }: Props) {
+export function HomeScreen({ navigation }: Props) {
   return (
     <View>
       <Button
-        title="Ir a NewApp"
-        onPress={() => navigation.navigate('NewApp')}
+        title="Ir a Camera"
+        onPress={() => navigation.navigate('Camera')}
       />
       <Text>Contenido de Home</Text>
     </View>
